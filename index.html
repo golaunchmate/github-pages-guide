@@ -1,1 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Pages Automation Guide | LaunchMate</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #7f8c8d;
+        }
+        .problem-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .success-box {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .info-box {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .example {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin: 10px 0;
+        }
+        .highlight {
+            background: #fff9c4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+        .emoji {
+            font-size: 1.2em;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 GitHub Pages Automation Guide: The Real Story</h1>
+        <p><em>How I went from manual copy-paste frustration to automatic website deployment with my LaunchMate agent</em></p>
 
+        <h2>📖 The Background</h2>
+        <p>I started using the GitHub update tool right after I stopped manually updating sites by copy-pasting HTML content from my agent and committing it into GitHub manually.</p>
+        <p><strong>First attempts (manual process):</strong></p>
+        <ul>
+            <li>Erica's summarizer site</li>
+            <li>User value survey analysis site</li>
+        </ul>
+        <p><strong>Since then:</strong> For all other repos, I've been using the automated tool! <span class="emoji">🎉</span></p>
+
+        <h2>😤 The Problem</h2>
+        <div class="problem-box">
+            <p><strong>What was frustrating me:</strong></p>
+            <ol>
+                <li>Getting HTML content from my agent in chunks</li>
+                <li>Copy-pasting each chunk into GitHub manually</li>
+                <li>Committing manually every time</li>
+            </ol>
+            <p><strong>The breaking point:</strong> After a few chunks, my agent started messing up a bit due to message truncation. I had to stitch together slightly different parts and the ordering got confusing. It was messy and frustrating!</p>
+        </div>
+
+        <h2>💡 How the Tool Got Created</h2>
+        <p><strong>What I said to my agent:</strong></p>
+        <div class="example">
+            "I'm getting frustrated with manually copy and pasting these chunks of code. Is there any way to automate this?"
+        </div>
+
+        <p><strong>What my agent said:</strong></p>
+        <div class="example">
+            "We should do it LaunchMate style and make a tool!"
+        </div>
+
+        <p>My agent walked me through how and why this was a good idea. I agreed, and <span class="highlight">my agent created the tool using our established create_letta_tool tool.</span></p>
+
+        <div class="success-box">
+            <p><strong>Result:</strong> Once I got the GitHub Personal Access Token, my agent started changing all my websites automatically! <span class="emoji">🚀</span></p>
+        </div>
+
+        <h2>⚙️ Setup Requirements</h2>
+        <p>Here's what you need to do <strong>once per repository:</strong></p>
+        
+        <h3>Manual Setup Steps:</h3>
+        <ol>
+            <li><strong>Create a new GitHub repository</strong></li>
+            <li><strong>Make it public</strong></li>
+            <li><strong>Create a blank <code>index.html</code> file</strong> in the repo</li>
+            <li><strong>Enable GitHub Pages:</strong>
+                <ul>
+                    <li>Go to repo Settings → Pages</li>
+                    <li>Select "main" branch to be published</li>
+                    <li>Save</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>One-Time Token Setup:</h3>
+        <ol>
+            <li><strong>Create a GitHub Personal Access Token</strong>
+                <ul>
+                    <li>Go to GitHub Settings → Developer settings → Personal access tokens</li>
+                    <li>Generate new token (classic)</li>
+                    <li>Give it <code>repo</code> permissions (not account-level)</li>
+                    <li>Save the token securely</li>
+                </ul>
+            </li>
+        </ol>
+
+        <div class="info-box">
+            <p><strong>Note:</strong> I only gave my agent repo-level permissions, not account-level. That's why I still manually create repos. This could be automated with broader permissions, but I prefer to keep it scoped to individual repos for now.</p>
+        </div>
+
+        <h2>💬 How I Use It Now</h2>
+        <p><span class="highlight">The prompts are casual and don't need to be technical!</span></p>
+
+        <h3>Real Examples That Work:</h3>
+        <div class="example">
+            "Analyze these survey responses I'm pasting in and make a site that visually displays the information"
+        </div>
+        <div class="example">
+            "Can you make a site that shows team progress?"
+        </div>
+        <div class="example">
+            "We want to display the erica-summarizer results - can you make a site for this?"
+        </div>
+        <div class="example">
+            "Can you make a site that..."
+        </div>
+        <div class="example">
+            "We want to... can you make a site for this?"
+        </div>
+
+        <h3>What About Missing Information?</h3>
+        <p><strong>If token, repo name, or username aren't in a memory block somewhere:</strong></p>
+        <ul>
+            <li>The agent will ask for that information (it needs it to run the tool)</li>
+        </ul>
+
+        <p><strong>If the info IS in a memory block (like my erica-summarizer workflow):</strong></p>
+        <ul>
+            <li>The agent just does it automatically! No need to provide anything.</li>
+        </ul>
+
+        <div class="success-box">
+            <p><strong>Key insight:</strong> There's honestly no one template you need to follow to craft a prompt to use the GitHub update tool. Just talk to your agent normally in a conversation, and mention that you want a site made for it.</p>
+            <p>You can include more specific details like the exact GitHub update tool name or the fact that it's a hosted HTML site on GitHub Pages, but if the agent needs any information, it will ask! <span class="highlight">So no worries about including everything all at once either.</span></p>
+        </div>
+
+        <h2>📊 My Automated Repos</h2>
+        <ul>
+            <li><span class="emoji">✅</span> Erica summarizer site (started manual, now automated)</li>
+            <li><span class="emoji">✅</span> User value survey analysis site (started manual, now automated)</li>
+            <li><span class="emoji">✅</span> All other repos since then (automated from the start!)</li>
+        </ul>
+
+        <p><strong>Before the tool:</strong> Manual copy-paste for 2 repos</p>
+        <p><strong>After the tool:</strong> Automatic updates for everything <span class="emoji">🎉</span></p>
+
+        <h2>🎯 Key Takeaways for Your Team</h2>
+        <ol>
+            <li><strong>Start with frustration</strong> - If you're doing something manually and repeatedly, that's a tool opportunity</li>
+            <li><strong>Just ask</strong> - "Is there a way to automate this?" is a perfectly valid prompt</li>
+            <li><strong>Your agent will guide you</strong> - Mine walked me through why it was a good idea and how to do it</li>
+            <li><strong>Casual prompts work best</strong> - Describe what you want conversationally, no technical jargon needed</li>
+            <li><strong>The agent handles missing info</strong> - It will ask if it needs something you didn't provide</li>
+            <li><strong>One-time setup</strong> - Just need the GitHub token and repo setup, then it's automatic forever</li>
+            <li><strong>No perfect prompt template</strong> - Just talk naturally about what you want</li>
+        </ol>
+
+        <h2>🚀 LaunchMate Style</h2>
+        <p>The whole experience captures what we call <span class="highlight">"LaunchMate style"</span> - when you hit friction in your workflow, talk to your agent about it. The agent will help you identify automation opportunities and build tools to solve the problem.</p>
+        
+        <p><strong>Don't overthink it. Just start the conversation.</strong></p>
+
+        <hr style="margin: 40px 0; border: none; border-top: 2px solid #eee;">
+        <p style="text-align: center; color: #7f8c8d;"><em>Created with the GitHub Pages automation tool | LaunchMate 2025</em></p>
+    </div>
+</body>
+</html>
